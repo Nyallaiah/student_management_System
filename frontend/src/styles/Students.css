@@ -1,0 +1,438 @@
+.view-students-container {
+  padding: 20px;
+}
+
+.view-students-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Search Bar */
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+  border-color: #4f46e5;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 16px;
+}
+
+/* Error Message */
+.error-message {
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Students Table */
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.students-table thead {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.students-table th,
+.students-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.students-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.students-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.students-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Table Input for Editing */
+.students-table input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.students-table input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn,
+.delete-btn,
+.save-btn,
+.cancel-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.edit-btn {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #2563eb;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+}
+
+.save-btn {
+  background-color: #10b981;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #059669;
+}
+
+.cancel-btn {
+  background-color: #6b7280;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background-color: #4b5563;
+}
+
+/* Total Count */
+.total-count {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .students-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+}
+
+/* Button Styles */
+.btn-view,
+.btn-edit,
+.btn-delete,
+.btn-save {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  margin-right: 5px;
+}
+
+.btn-view {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.btn-view:hover {
+  background-color: #2563eb;
+}
+
+.btn-edit {
+  background-color: #10b981;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #059669;
+}
+
+.btn-delete {
+  background-color: #ef4444;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #dc2626;
+}
+
+.btn-save {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #4338ca;
+}
+
+/* Average Badge */
+.average-badge {
+  padding: 5px 10px;
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.close-modal:hover {
+  color: #1f2937;
+}
+
+/* Profile View */
+.profile-view {
+  margin-top: 20px;
+}
+
+.profile-field {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.profile-field label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.profile-field span {
+  color: #6b7280;
+}
+
+/* Edit Form */
+.edit-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.form-group textarea {
+  min-height: 80px;
+}
+
+/* Marks Details */
+.marks-details {
+  background: #f3f4f6;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.marks-details p {
+  margin: 5px 0;
+}
+
+/* Marks Modal - Wider for more columns */
+.marks-modal {
+  max-width: 900px;
+  width: 95%;
+}
+
+/* Marks Edit Table */
+.marks-edit-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  display: table;
+}
+
+.marks-edit-table th,
+.marks-edit-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #f3f4f6;
+  min-width: 80px;
+}
+
+.marks-edit-table th {
+  background: #f9fafb;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #4b5563;
+}
+
+.marks-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 70px;
+}
+
+.marks-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+/* Table scroll wrapper for smaller screens */
+.marks-table-wrapper {
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.btn-delete-small {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.marks-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-add-subject {
+  padding: 10px 20px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-add-subject:hover {
+  background: #059669;
+}
+
+/* Manage Containers */
+.manage-profiles-container,
+.manage-marks-container {
+  padding: 20px;
+}
+
+.manage-profiles-container h1,
+.manage-marks-container h1 {
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+.manage-profiles-container p,
+.manage-marks-container p {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+

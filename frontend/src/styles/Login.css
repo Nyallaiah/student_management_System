@@ -1,0 +1,203 @@
+/* =========================
+   LOGIN PAGE LAYOUT
+========================= */
+.login-page {
+  display: flex;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================
+   LEFT PANEL
+========================= */
+.login-left {
+  flex: 1;
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+}
+
+.login-left h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.login-left p {
+  font-size: 17px;
+  max-width: 420px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* =========================
+   RIGHT PANEL
+========================= */
+.login-right {
+  flex: 1;
+  background-color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+.login-card {
+  background: #ffffff;
+  padding: 45px;
+  width: 380px;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 22px;
+  color: #111827;
+}
+
+/* =========================
+   INPUT GROUP
+========================= */
+.input-group {
+  margin-bottom: 22px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.input-group input {
+  width: 95%;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  transition: 0.2s ease;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+.input-group-password input {
+  width: 87%;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  transition: 0.2s ease;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+.input-group input:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.input-group-password input:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* =========================
+   PASSWORD WRAPPER
+========================= */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 45px;
+}
+
+/* Eye Icon */
+.eye-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #6b7280;
+  transition: 0.2s ease;
+}
+
+.eye-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.eye-icon:hover {
+  color: #2563eb;
+}
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+.login-btn-main {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-btn-main:hover {
+  background-color: #1e40af;
+}
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+.error-text {
+  color: #dc2626;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.success-text {
+  color: #16a34a;
+  font-size: 14px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #dcfce7;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* =========================
+   BACK TO HOME LINK
+========================= */
+.back-home {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 14px;
+}
+
+.back-home a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-home a:hover {
+  text-decoration: underline;
+}
