@@ -11,7 +11,8 @@ from models.student_model import (
     create_user_from_student,
     get_user_by_email,
     get_student_marks,
-    update_student_marks
+    update_student_marks,
+    get_student_by_roll_number
 )
 
 # Get secret key from app config
@@ -72,6 +73,10 @@ def create_student_route():
     if existing_user:
         return jsonify({'success': False, 'message': 'User with this email already exists'}), 400
     
+    # Check if roll number already exists
+    if get_student_by_roll_number(data['rollNumber']):
+        return jsonify({'success': False, 'message': 'Roll number already exists'}), 400
+    
     # Create new student in MongoDB
     new_student = create_student(data)
     
@@ -114,6 +119,12 @@ def update_student_route(student_id):
         existing = get_student_by_email(data['email'])
         if existing and existing['_id'] != student_id:
             return jsonify({'success': False, 'message': 'Email already exists'}), 400
+    
+    # Check if roll number already exists for another student
+    if 'rollNumber' in data:
+        existing_roll = get_student_by_roll_number(data['rollNumber'])
+        if existing_roll and existing_roll['_id'] != student_id:
+            return jsonify({'success': False, 'message': 'Roll number already exists'}), 400
     
     # Update student in MongoDB
     updated_student = update_student(student_id, data)

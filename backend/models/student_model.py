@@ -48,9 +48,20 @@ def get_student_by_email(email):
     student = get_students_collection().find_one({'email': email})
     if student:
         student['_id'] = str(student['_id'])
+
     return student
 
+
+def get_student_by_roll_number(roll_number):
+    """Get a student by roll number from MongoDB"""
+    student = get_students_collection().find_one({'rollNumber': roll_number})
+    if student:
+        student['_id'] = str(student['_id'])
+    return student
+
+
 def create_student(data):
+
     """Create a new student in MongoDB"""
     student = {
         'name': data.get('name'),
